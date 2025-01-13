@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify Genre Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #1E1E1E;
+        color: #FFFFFF;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width:   1200px;
+        margin: 0 auto;
+        padding: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 20px;
+    }
+    .genre-card {
+        background-color:#282828;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        transition: transform 0.7s ease; 
+        cursor: pointer;
+    }
+  .genre-container:hover {
+    transform: scale(1.1);
+  }
+    .genre-card:nth-child(1):hover {
+        background-color:black ; 
+    }
+
+    .genre-card:nth-child(2):hover {
+        background-color: red; 
+    }
+
+    .genre-card:nth-child(3):hover {
+        background-color: #ffae42; 
+    }
+
+    .genre-card:nth-child(4):hover {
+        background-color: #53e7f5; 
+    }
+
+    .genre-card:nth-child(5):hover {
+        background-color: #8a2be2; 
+    }
+
+    .genre-card:nth-child(6):hover {
+        background-color: black; 
+    }
+
+    .genre-card:nth-child(7):hover {
+        background-color: #003300; 
+    }
+
+    .genre-card:nth-child(8):hover {
+        background-color: #733f12; 
+    }
+
+    .genre-card:nth-child(9):hover {
+        background-color: #4d1a00; 
+    }
+
+    .genre-card:nth-child(10):hover {
+        background-color: #ff69b4; 
+    }
+    .genre-card:nth-child(11):hover {
+        background-color: purple; /* Gold */
+    }
+
+    .genre-card:nth-child(12):hover {
+        background-color: gold ; 
+    }
+
+    .genre-card:nth-child(13):hover {
+        background-color: black; 
+    }
+
+    .genre-card:nth-child(14):hover {
+        background-color: aqua; 
+    }
+
+    .genre-card:nth-child(15):hover {
+        background-color: pink; 
+    }
+
+    .genre-card:nth-child(10):hover {
+        background-color: #ff69b4; 
+    }
+    .genre-card:active {
+        transform: scale(1.05); 
+    }
+    .genre-image {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .genre-name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th/id/OIP.5JTIuYWPiTe9CmVddmQOowHaHa?w=169&h=180&c=7&r=0&o=5&pid=1.7" alt="Genre Image" class="genre-image">
+        <div class="genre-name">Pop</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th/id/OIP.53GKpJ-CRgzaXspxXkordAHaFj?w=204&h=180&c=7&r=0&o=5&pid=1.7" alt="Genre Image" class="genre-image">
+        <div class="genre-name">Rock</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th/id/OIP.S91cXNBqlqqM7mz1mg6kagHaHa?w=185&h=185&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Genre Image" class="genre-image">
+        <div class="genre-name">Hip Hop</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th/id/OIP.qdM85vjl1suo0hj4Y9kn2AHaHa?w=176&h=180&c=7&r=0&o=5&pid=1.7" alt="Genre Image" class="genre-image">
+        <div class="genre-name">Jazz</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th/id/OIP.AEnkTu9C-S4kgrUFx1sqNQHaHa?w=210&h=210&c=7&r=0&o=5&pid=1.7" alt="Genre Image" class="genre-image">
+        <div class="genre-name">Electronic</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th/id/OIP.l-cOGof5JXWTVYH3smM0ywHaHa?w=195&h=195&c=7&r=0&o=5&pid=1.7" alt="Genre Image" class="genre-image">
+        <div class="genre-name">Classical</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th/id/OIP.w2YTM7KqXzMLPxCdTj-mAgHaHZ?w=206&h=205&c=7&r=0&o=5&pid=1.7" alt="Genre Image" class="genre-image">
+        <div class="genre-name">Reggae</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="data:image/jpeg;base64,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" alt="Genre Image" class="genre-image">
+        <div class="genre-name">Country</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th/id/OIP.NlFGNC4NODJiZajK9J8hJAHaHa?w=181&h=181&c=7&r=0&o=5&pid=1.7" alt="Genre Image" class="genre-image">
+        <div class="genre-name">Blues</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th?q=R%26B+Soul+Logo&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247" alt="Genre Image" class="genre-image">
+        <div class="genre-name">R&B</div>
+    </div>
+   <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th/id/OIP.iF2TuB_xXXL0Fyum83qG2AHaHa?w=188&h=189&c=7&r=0&o=5&pid=1.7" alt="Genre Image" class="genre-image">
+        <div class="genre-name" onclick="popEffect(this)">Metal</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th/id/OIP.be1mo-FazGdihQrq2sjwNQAAAA?w=198&h=199&c=7&r=0&o=5&pid=1.7" alt="Genre Image" class="genre-image">
+        <div class="genre-name" onclick="popEffect(this)">Folk</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th/id/OIP.mc3q61KYmaBWzrJ9rpH5LgHaHa?w=196&h=196&c=7&r=0&o=5&pid=1.7" alt="Genre Image" class="genre-image">
+        <div class="genre-name">Dubstep</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th?q=Trance+Wallpaper+for+Laptop&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247" alt="Genre Image" class="genre-image">
+        <div class="genre-name" onclick="popEffect(this)">Trance</div>
+    </div>
+    <div class="genre-card" onclick="popEffect(this)">
+        <img src="https://th.bing.com/th?id=OIP.Iqxxk3Nh7G_6GOx4t57BQgHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Genre Image" class="genre-image">
+        
+</div>
+  <script>
+  // Function to apply "pop" effect
+  function popEffect(element) {
+    // Add pop effect
+    element.style.transform = 'scale(1.05)';
+    // Reset the scale after 100ms
+    setTimeout(() => {
+      element.style.transform = 'scale(1)';
+    }, 100);
+  }
+</script>
+
+</body>
+</html>
+

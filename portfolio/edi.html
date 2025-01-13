@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aari's Educational Qualifications</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #000000, #1a1a1a);
+            color: #d5006e;
+        }
+        .back-arrow {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        .back-arrow a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #ff99cc;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        .back-arrow a:hover {
+            color: #ffffff;
+        }
+        .back-arrow span {
+            margin-left: 0.5rem;
+            font-size: 1.2rem;
+        }
+        header {
+            background: linear-gradient(45deg, #d5006e, #ff0066);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            animation: fadeInDown 1.5s ease;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: rgba(26, 26, 26, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+        h2 {
+            color: #ff80bf;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1.5s ease;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #333333;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-left: 5px solid #d5006e;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        li:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(255, 192, 203, 0.7);
+            background: linear-gradient(120deg, #444444, #550000);
+        }
+        li strong {
+            font-size: 1.3rem;
+            color: #ff99cc;
+        }
+        li p {
+            margin: 0.5rem 0 0;
+            color: #cccccc;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            background: rgba(26, 26, 26, 0.9);
+            color: #cccccc;
+        }
+        footer a {
+            color: #d5006e;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="back-arrow">
+        <a href="./pagee.html">
+            &#8592; <span>Back</span>
+        </a>
+    </div>
+    <header>
+        <h1>My Educational Qualifications</h1>
+    </header>
+    <div class="container">
+        <h2>Education</h2>
+        <ul>
+            <li>
+                <a href="https://www.kgcas.com/">
+                    <strong>KG College of Arts and Sciences</strong>
+                </a>
+                <p>Bachelor of Computer Science (2023-2026)<br>Participated in startup programs and hackathons, gaining valuable experience.</p>
+            </li>
+            <li>
+                <a href="https://m.facebook.com/profile.php?id=505910389503116">
+                    <strong>Sri Shanthi Vijay Girls Higher Secondary School</strong>
+                </a>
+                <p>Higher Secondary<br>Year 1 (2021-2022): 94.2%<br>Year 2 (2022-2023): 98.3%</p>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <h2>Certifications</h2>
+        <ul>
+            <li>
+                <a href="https://drive.google.com/drive/folders/1yul0LUKcDlxB59KF9wGy4mwUIMKH6wwh?usp=share_link" target="_blank">
+                    <strong>Hackathon and Course Completion Certifications</strong>
+                </a>
+                <p>Gained ample knowledge and experience in diverse fields.</p>
+            </li>
+            <li>
+                <a href="https://example.com/data-analysis-python" target="_blank">
+                    <strong>Smart India Hackathon</strong>
+                </a>
+                <p>Shortlisted twice for SIH Intercollege Hackathons.</p>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <h2>Experiences</h2>
+        <ul>
+            <li>
+                <a href="https://www.google.co.in/url?sa=t&source=web&rct=j&opi=89978449&url=https://kgx.nivu.me/&ved=2ahUKEwin5rzTjriKAxVMzjgGHRJDKyUQFnoECB8QAQ&usg=AOvVaw1O8jZemkfB0ST1UICxxwTr" target="_blank">
+                    <strong>Intern at KGXperience</strong>
+                </a>
+                <p>Worked as part of the social media team, managing digital content.</p>
+            </li>
+            <li>
+                <a href="https://www.google.co.in/url?sa=t&source=web&rct=j&opi=89978449&url=https://hackathon.tvois.vodafone.com/&ved=2ahUKEwiRjJLqjriKAxX7yDgGHVmwGHQQFnoECBoQAQ&usg=AOvVaw1MPwKInvcGuxC37rQjM3eR" target="_blank">
+                    <strong>VI Hackathon</strong>
+                </a>
+                <p>Developed a professional website for VI during the hackathon.</p>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <p><a href="./pagee.html">Visit my Portfolio</a></p>
+    </footer>
+</body>
+</html>

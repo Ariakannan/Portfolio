@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aari's Hobbies</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #d5006e;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(45deg, #d5006e, #ff0066);
+            color: #000000;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 1.2rem;
+            color: #fcfcfc;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+        .back-button i {
+            margin-right: 8px;
+            font-size: 1.4rem;
+        }
+        .back-button:hover {
+            color: #000000;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            color: #d5006e;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #333333;
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border-left: 5px solid #d5006e;
+            border-radius: 8px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(255, 105, 180, 0.5);
+            background: #444444;
+        }
+        li::before {
+            content: "★";
+            color: #d5006e;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 50%;
+            left: -1.5rem;
+            transform: translateY(-50%);
+        }
+        li strong {
+            font-size: 1.2rem;
+            color: #ff80bf;
+        }
+        li p {
+            margin: 0.5rem 0 0;
+            color: #cccccc;
+            font-style: italic;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            background: #1a1a1a;
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #d5006e;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <a href="./pagee.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+
+    <header>
+        <h1>My Hobbies and Passions</h1>
+    </header>
+    <div class="container">
+        <h2>Things I Love Doing</h2>
+        <ul>
+            <li>
+                <strong>Dancing</strong>
+                <p>Expressing myself through graceful moves and choreography.</p>
+            </li>
+            <li>
+                <strong>Singing</strong>
+                <p>Melodies and rhythms bring my soul to life.</p>
+            </li>
+            <li>
+                <strong>Painting</strong>
+                <p>Creating colorful masterpieces that tell unique stories.</p>
+            </li>
+            <li>
+                <strong>Yoga</strong>
+                <p>Finding balance and inner peace through mindful practice.</p>
+            </li>
+            <li>
+                <strong>Physical Activities</strong>
+                <p>Staying active with exercises and outdoor adventures.</p>
+            </li>
+            <li>
+                <strong>Writing</strong>
+                <p>Writing my heart out as poems and songs.</p>
+            </li>
+            <li>
+                <strong>Handball Player</strong>
+                <p>Competing fiercely as part of a dynamic team.</p>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <p><a href="./pagee.html">Check my Portfolio</a>.</p>
+    </footer>
+
+    <!-- Font Awesome for the back button icon -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>
+

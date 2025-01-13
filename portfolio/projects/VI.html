@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VI Music Navigation Bar</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color:  #1a1a1a; 
+  }
+
+  .navbar {
+    background-color: #000; 
+    color: #ff4d4d; 
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar .logo {
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar .logo img {
+    margin-right: 10px;
+    width: 70px;
+  }
+
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar ul li {
+    margin-left: 20px;
+    position: relative;
+  }
+
+  .navbar ul li a {
+    text-decoration: none;
+    color: #ff4d4d; 
+    transition: color 0.7s ease;
+  }
+
+  .navbar ul li a:hover {
+    color: #ffd11a; 
+  }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #000;
+    padding: 10px;
+    z-index: 1;
+  }
+
+  .navbar ul li:hover .dropdown {
+    display: block;
+  }
+
+  .dropdown a {
+    color: #ff4d4d;
+    display: block;
+    padding: 5px 0;
+    transition: color 0.7s ease;
+  }
+
+  .dropdown a:hover {
+    color: #ffd11a;
+  }
+
+  .albums-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+
+  .album {
+    width: calc(33.23% - 55px);
+    background-color: #333;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    transition: transform 0.7s ease;
+  }
+
+  .album:hover {
+    transform: scale(1.1);
+  }
+
+  .album img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="logo">
+    <img src="https://zeevector.com/wp-content/uploads/2021/02/VI-logo-PNG-Transparent-768x612.png" alt="Vodafone Idea">
+    <div>Tunes</div>
+  </div>
+  <ul>
+    <li>
+      <a href="#">Home</a>
+      <div class="dropdown">
+        <a href="./genre.html">Genres</a>
+      </div>
+    </li>
+    <li><a href="./lib.html">Search</a></li>
+    <li><a href="./lib.html">Your Library</a></li>
+  </ul>
+</div>
+
+<div class="albums-container">
+  <div class="album">
+    <img src="https://i0.wp.com/bloody-disgusting.com/wp-content/uploads/2014/08/slipknotthegraychaptercover.jpg" alt="Album 1">
+    <div>The Grey Chapter</div>
+    <div>Slipknot</div>
+  </div>
+
+  <div class="album">
+    <img src="https://images.squarespace-cdn.com/content/v1/565c1ab5e4b05079e4bfa169/1611813055115-JIN5ZYOG013QWFHFJWZP/ke17ZwdGBToddI8pDm48kHyB_qin_9smPgC1sIw2hLt7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UcRdE-4irt3kKfqQ-jBZ4h5aBcs1LcU6PLqKVKMwuJ0ozlEBjs9SbW93H2FKhpIPmA/AC:DC+Ballbreaker+Album+Cover.jpg" alt="Album 2">
+    <div>Ball Breaker</div>
+    <div>AC/DC</div>
+  </div>
+
+  <div class="album">
+    <img src="https://th.bing.com/th?id=OIP.YM5sR_QmL22Qpsk529rwAAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Album 3">
+    <div>Starboy</div>
+    <div>TheWeeknd</div>
+  </div>
+
+  <div class="album">
+    <img src="https://th.bing.com/th?id=OIP.u_WQDcsL-gJ1W1DCP-zB5wHaHm&w=246&h=253&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Album 4">
+    <div>Pearl jam</div>
+    <div>Alive</div>
+  </div>
+
+  <div class="album">
+    <img src="https://th.bing.com/th?id=OIP.56Z3QYeMPDv66lqWVTnhpAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Album 5">
+    <div>Feathers</div>
+    <div>Nirvana</div>
+  </div>
+
+  <div class="album">
+    <img src="https://th.bing.com/th?id=OIP.8bCQtyrLb4isv4odsciafQHaHS&w=252&h=247&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Album 6">
+    <div>Feathers</div>
+    <div>Fleetwoodmac</div>
+  </div>
+</div>
+
+</body>
+</html>

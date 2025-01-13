@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discipline Issue Reporting System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1, h2, h3 {
+      color: #004B93;
+      margin-bottom: 20px;
+    }
+
+    form {
+      text-align: left;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    .inputSection {
+      margin-bottom: 15px;
+    }
+
+    input[type=text], input[type=password], select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #E32636;
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+
+    button:hover {
+      background-color: #b71d2b;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #004B93;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #004B93;
+      color: #ffffff;
+    }
+
+    td {
+      background-color: #ffffff;
+      color: #333333;
+    }
+
+    .verified {
+      color: #004B93;
+      font-weight: bold;
+    }
+
+    .feedback {
+      color: red;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+        margin: 10px;
+      }
+
+      input[type=text], input[type=password], select {
+        padding: 8px;
+      }
+
+      button {
+        padding: 10px;
+        margin: 5px 0;
+      }
+
+      table, th, td {
+        padding: 6px;
+        font-size: 14px;
+      }
+
+      h1, h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .inputSection {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Disciplinary Issues Reporting System</h1>
+    <form id="loginForm">
+      <label for="userType">Kindly choose one </label>
+      <select id="userType" onchange="togglePasswordInput()">
+        <option value="dean">Dean</option>
+        <option value="faculty">Faculty</option>
+        <option value="totalReports">Total Reports</option>
+      </select>
+      <input type="password" id="passwordInput" placeholder="Enter password" style="display: none;">
+      <button type="button" id="loginButton" onclick="login()">Login</button>
+    </form>
+
+    <div id="facultyPage" style="display: none;">
+      <h2>Faculty Page</h2>
+      <div id="nameSection" class="inputSection">
+        <label for="nameInput">Enter Name:</label>
+        <input type="text" id="nameInput" placeholder="Enter student name...">
+      </div>
+      <div id="rollNumberSection" class="inputSection">
+        <label for="rollNumberInput">Enter Roll Number:</label>
+        <input type="text" id="rollNumberInput" placeholder="Enter roll number...">
+      </div>
+      <div id="crisisSection" class="inputSection">
+        <label for="crisisInput">Crisis:</label>
+        <input type="text" id="crisisInput" placeholder="Enter crisis details...">
+      </div>
+      <div id="querySection" class="inputSection">
+        <label for="queryInput">Query:</label>
+        <input type="text" id="queryInput" placeholder="Enter your query...">
+      </div>
+      <div id="solutionSection" class="inputSection">
+        <label for="solutionInput">Solution:</label>
+        <input type="text" id="solutionInput" placeholder="Enter solution...">
+      </div>
+      <button type="button" onclick="updateReport()">Update Report</button>
+      <button type="button" onclick="goBack()">Back</button>
+      <button type="button" onclick="navigateToTotalReports()">Total Reports</button>
+    </div>
+
+    <div id="deanPage" style="display: none;">
+      <h2>Dean's Dashboard</h2>
+      <div id="reportsSection">
+        <h3>Faculty Queries and Reports</h3>
+        <table id="reportTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Roll Number</th>
+              <th>Crisis</th>
+              <th>Query</th>
+              <th>Solution</th>
+              <th>Feedback</th>
+              <th>Verified</th>
+            </tr>
+          </thead>
+          <tbody id="reportTableBody">
+          </tbody>
+        </table>
+      </div>
+      <button type="button" onclick="goBack()">Back</button>
+      <button type="button" onclick="navigateToTotalReports()">Total Reports</button>
+    </div>
+
+    <div id="totalReportsPage" style="display: none;">
+      <h2>Total Reports</h2>
+      <div class="inputSection">
+        <label for="searchBox">Search Reports:</label>
+        <input type="text" id="searchBox" onkeyup="searchReports()" placeholder="Search by name or roll number...">
+      </div>
+      <div id="verifiedReportsSection">
+        <h3>Verified Reports</h3>
+        <table id="verifiedReportTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Roll Number</th>
+              <th>Crisis</th>
+              <th>Query</th>
+              <th>Solution</th>
+              <th>Feedback</th>
+            </tr>
+          </thead>
+          <tbody id="verifiedReportTableBody">
+          </tbody>
+        </table>
+      </div>
+      <button type="button" onclick="goBack()">Back</button>
+    </div>
+  </div>
+
+  <script>
+    var students = [
+      { rollNumber: 1, name: 'Ashley' },
+      { rollNumber: 2, name: 'Arthi' },
+      { rollNumber: 3, name: 'Ashleyn' },
+      { rollNumber: 4, name: 'Archu' },
+      { rollNumber: 5, name: 'Apus' },
+      { rollNumber: 6, name: 'Aria' },
+      { rollNumber: 7, name: 'Amanda' },
+      { rollNumber: 8, name: 'Ashika' },
+      { rollNumber: 9, name: 'Arthi' },
+      { rollNumber: 10, name: 'Anaconda' }
+    ];
+
+    var reports = [];
+    var verifiedReports = [];
+
+    function togglePasswordInput() {
+      var userType = document.getElementById('userType').value;
+      var passwordInput = document.getElementById('passwordInput');
+      
+      if (userType === 'dean' || userType === 'faculty' || userType === 'totalReports') {
+        passwordInput.style.display = 'inline-block';
+        passwordInput.placeholder = 'Enter password';
+      } else {
+        passwordInput.style.display = 'none';
+      }
+    }
+
+    function login() {
+      var userType = document.getElementById('userType').value;
+      var password = document.getElementById('passwordInput').value;
+      var facultyPage = document.getElementById('facultyPage');
+      var deanPage = document.getElementById('deanPage');
+      var totalReportsPage = document.getElementById('totalReportsPage');
+      var passwordInput = document.getElementById('passwordInput');
+      var loginForm = document.getElementById('loginForm');
+      var loginButton = document.getElementById('loginButton');
+
+      if ((userType === 'dean' && password === '1234') || (userType === 'faculty' && password === '4321') || (userType === 'totalReports' && password === '0000')) {
+        if (userType === 'dean') {
+          deanPage.style.display = 'block';
+          populateReportsTable();
+        } else if (userType === 'faculty') {
+          facultyPage.style.display = 'block';
+        } else if (userType === 'totalReports') {
+          totalReportsPage.style.display = 'block';
+          populateVerifiedReportsTable();
+        }
+
+        loginButton.style.display = 'none';
+        loginForm.style.display = 'none';
+        passwordInput.value = '';
+        passwordInput.style.display = 'none';
+      } else {
+        alert('Incorrect password. Please try again.');
+        passwordInput.value = '';
+      }
+    }
+
+    function updateReport() {
+      var name = document.getElementById('nameInput').value;
+      var rollNumber = document.getElementById('rollNumberInput').value;
+      var crisis = document.getElementById('crisisInput').value;
+      var query = document.getElementById('queryInput').value;
+      var solution = document.getElementById('solutionInput').value;
+
+      var report = {
+        name: name,
+        rollNumber: rollNumber,
+        crisis: crisis,
+        query: query,
+        solution: solution,
+        feedback: 'Poor',
+        verified: false
+      };
+
+      reports.push(report);
+
+      alert('Report updated successfully:\nCrisis: ' + crisis + '\nQuery: ' + query + '\nSolution: ' + solution);
+      
+      document.getElementById('nameInput').value = '';
+      document.getElementById('rollNumberInput').value = '';
+      document.getElementById('crisisInput').value = '';
+      document.getElementById('queryInput').value = '';
+      document.getElementById('solutionInput').value = '';
+    }
+
+    function populateReportsTable() {
+      var tableBody = document.getElementById('reportTableBody');
+      tableBody.innerHTML = '';
+
+      reports.forEach(function(report, index) {
+        var row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${report.name}</td>
+          <td>${report.rollNumber}</td>
+          <td>${report.crisis}</td>
+          <td>${report.query}</td>
+          <td>${report.solution}</td>
+          <td class="feedback">${report.feedback}</td>
+          <td>
+            <input type="checkbox" id="verifyCheckbox${index}" ${report.verified ? 'checked' : ''} onclick="toggleVerified(${index})">
+            <span id="verifiedStatus${index}" class="${report.verified ? 'verified' : ''}">${report.verified ? 'Verified' : 'Not Verified'}</span>
+          </td>`;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function toggleVerified(index) {
+      var report = reports[index];
+      report.verified = !report.verified;
+
+      var verifiedStatus = document.getElementById(`verifiedStatus${index}`);
+      if (report.verified) {
+        verifiedReports.push(report);
+        calculateFeedback(report);
+        verifiedStatus.textContent = 'Verified';
+        verifiedStatus.classList.add('verified');
+      } else {
+        verifiedReports = verifiedReports.filter(r => r !== report);
+        verifiedStatus.textContent = 'Not Verified';
+        verifiedStatus.classList.remove('verified');
+      }
+
+      populateVerifiedReportsTable();
+    }
+
+    function calculateFeedback(report) {
+      var count = verifiedReports.filter(r => r.rollNumber === report.rollNumber).length;
+      if (count > 5) {
+        report.feedback = 'Extremely Deviant';
+      } else if (count > 3) {
+        report.feedback = 'Very Poor';
+      } else {
+        report.feedback = 'Poor';
+      }
+    }
+
+    function populateVerifiedReportsTable() {
+      var tableBody = document.getElementById('verifiedReportTableBody');
+      tableBody.innerHTML = '';
+
+      verifiedReports.forEach(function(report) {
+        var row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${report.name}</td>
+          <td>${report.rollNumber}</td>
+          <td>${report.crisis}</td>
+          <td>${report.query}</td>
+          <td>${report.solution}</td>
+          <td class="feedback">${report.feedback}</td>`;
+        tableBody.appendChild(row);
+      });
+    }
+
+    function searchReports() {
+      var searchValue = document.getElementById('searchBox').value.toLowerCase();
+      var tableBody = document.getElementById('verifiedReportTableBody');
+      tableBody.innerHTML = '';
+
+      verifiedReports.forEach(function(report) {
+        if (report.name.toLowerCase().includes(searchValue) || report.rollNumber.toLowerCase().includes(searchValue)) {
+          var row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${report.name}</td>
+            <td>${report.rollNumber}</td>
+            <td>${report.crisis}</td>
+            <td>${report.query}</td>
+            <td>${report.solution}</td>
+            <td class="feedback">${report.feedback}</td>`;
+          tableBody.appendChild(row);
+        }
+      });
+    }
+
+    function navigateToTotalReports() {
+      var facultyPage = document.getElementById('facultyPage');
+      var deanPage = document.getElementById('deanPage');
+      var totalReportsPage = document.getElementById('totalReportsPage');
+
+      facultyPage.style.display = 'none';
+      deanPage.style.display = 'none';
+      totalReportsPage.style.display = 'block';
+      populateVerifiedReportsTable();
+    }
+
+    function goBack() {
+      var loginForm = document.getElementById('loginForm');
+      var loginButton = document.getElementById('loginButton');
+      var passwordInput = document.getElementById('passwordInput');
+      var facultyPage = document.getElementById('facultyPage');
+      var deanPage = document.getElementById('deanPage');
+      var totalReportsPage = document.getElementById('totalReportsPage');
+
+      loginForm.style.display = 'block';
+      loginButton.style.display = 'inline-block';
+
+      facultyPage.style.display = 'none';
+      deanPage.style.display = 'none';
+      totalReportsPage.style.display = 'none';
+
+      passwordInput.value = '';
+    }
+  </script>
+</body>
+</html>

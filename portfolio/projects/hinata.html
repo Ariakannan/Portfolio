@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hinata's HTML Dojo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://wallpapercave.com/wp/wp9381752.jpg');
+            background-size: cover;
+        }
+
+        #container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #00004d;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        .celebration {
+            animation: celebration 0.5s ease-in-out;
+        }
+
+        @keyframes celebration {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Welcome to Hinata's HTML Dojo!</h1>
+        <p>Let's embark on a coding journey together, just like Naruto on his quest to become Hokage!</p>
+        <button onclick="startGame()">Begin Training</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        let challenges = [
+            "Write HTML to display a paragraph with the text 'Hello World'.",
+            "Create an unordered list with three items: 'HTML', 'CSS', 'JavaScript'.",
+            "Insert an image with the following URL: 'https://example.com/image.jpg'.",
+            "Write a heading with the text 'About Me'.",
+            "Create a link to the Google website with the text 'Visit Google'."
+        ];
+
+        let currentChallenge = 0;
+
+        function startGame() {
+            currentChallenge = 0;
+            showChallenge();
+        }
+
+        function showChallenge() {
+            const output = document.getElementById('output');
+            output.innerHTML = `
+                <p>Hello there! I'm Hinata, your HTML sensei.</p>
+                <p>Let's start with some basic HTML challenges!</p>
+                <p>Challenge ${currentChallenge + 1}: ${challenges[currentChallenge]}</p>
+                <input type="text" id="userInput" placeholder="Your HTML code">
+                <button onclick="checkHTML()">Submit</button>
+            `;
+        }
+
+        function checkHTML() {
+            const userInput = document.getElementById('userInput').value;
+            const output = document.getElementById('output');
+            const expectedSolutions = [
+                "<p>Hello World</p>",
+                "<ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>",
+                "<img src='https://example.com/image.jpg' alt='Image'>",
+                "<h2>About Me</h2>",
+                "<a href='https://www.google.com'>Visit Google</a>"
+            ];
+
+            if (userInput.trim() === "") {
+                output.innerHTML = "<p>Please enter your HTML code!</p>";
+            } else if (userInput === expectedSolutions[currentChallenge]) {
+                output.innerHTML = `
+                    <div class="celebration">
+                        <p>Great job! You completed Challenge ${currentChallenge + 1}!</p>
+                    </div>
+                    <button onclick="nextChallenge()">Next Challenge</button>
+                `;
+                celebrate();
+            } else {
+                output.innerHTML = `
+                    <p>Oops! Your HTML code doesn't match. Keep trying!</p>
+                    <button onclick="showChallenge()">Try Again</button>
+                `;
+            }
+            communicate();
+        }
+
+        function celebrate() {
+            const confetti = document.createElement('div');
+            confetti.innerHTML = "&#10084;&#65039;&#127881;"; 
+            confetti.style.fontSize = "48px";
+            document.getElementById('output').appendChild(confetti);
+            displayQuote();
+        }
+
+        function displayQuote() {
+            const quotes = [
+                "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+                "Believe you can and you're halfway there.",
+                "The only limit to our realization of tomorrow will be our doubts of today.",
+                "The secret of getting ahead is getting started.",
+                "Don't watch the clock; do what it does. Keep going."
+            ];
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quote = document.createElement('p');
+            quote.textContent = `"${quotes[randomIndex]}" - Department of CS`;
+            document.getElementById('output').appendChild(quote);
+        }
+
+        function communicate() {
+            const communication = document.createElement('p');
+            communication.textContent = "Remember, practice makes perfect! Don't give up!";
+            document.getElementById('output').appendChild(communication);
+            askForFeedback();
+        }
+
+        function askForFeedback() {
+            const output = document.getElementById('output');
+            const feedbackBtn = document.createElement('button');
+            feedbackBtn.textContent = "Did you find this session helpful?";
+            feedbackBtn.onclick = function() {
+                output.innerHTML += "<p>Thank you for your feedback!</p>";
+            };
+            output.appendChild(feedbackBtn);
+        }
+
+        function nextChallenge() {
+            currentChallenge++;
+            if (currentChallenge < challenges.length) {
+                showChallenge();
+            } else {
+                document.getElementById('container').style.backgroundImage = "url('https://wallpapercave.com/wp/wp2849793.png')";
+                document.getElementById('output').innerHTML = `
+                    <p>Congratulations! You've completed all challenges!</p>
+                    <p>You're now an HTML ninja, just like Naruto!</p>
+                `;
+                askForFeedback();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aari's Front-End Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #000000, #1a1a1a);
+            color: #d5006e;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(45deg, #d5006e, #ff0066);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 0;
+            position: relative;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            animation: fadeInDown 1.5s ease;
+        }
+
+        /* Back button style */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 1.5rem;
+            color: #ffffff; /* White color */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            z-index: 999; /* Ensure it appears on top of other elements */
+        }
+        .back-button:hover {
+            color: #5c002f;
+        }
+        .back-button i {
+            font-size: 2rem; /* FontAwesome icon size */
+            margin-right: 8px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: rgba(26, 26, 26, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.7);
+        }
+        h2 {
+            color: #ff80bf;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1.5s ease;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #333333;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-left: 5px solid #d5006e;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+        }
+        li:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(255, 192, 203, 0.7);
+            background: linear-gradient(120deg, #444444, #550000);
+        }
+        li::before {
+            content: "★";
+            color: #d5006e;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 50%;
+            left: -1.5rem;
+            transform: translateY(-50%);
+            animation: float 2s infinite;
+        }
+        li strong {
+            font-size: 1.3rem;
+            color: #ff99cc;
+        }
+        li p {
+            margin: 0.5rem 0 0;
+            color: #cccccc;
+            font-style: italic;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+            background: rgba(26, 26, 26, 0.9);
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #d5006e;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(-2px);
+            }
+            50% {
+                transform: translateY(2px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back button -->
+    <a href="./pagee.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+
+    <header>
+        <h1>Front-End Projects</h1>
+    </header>
+    <div class="container">
+        <h2>Highlighted Projects & Experiences</h2>
+        <ul>
+            <li>
+                <strong>VI Hackathon</strong>
+                <p>Developed a dynamic and user-friendly website for VI as part of a prestigious hackathon.</p>
+            </li>
+            <li>
+                <strong>Social Media Intern at KGXperience</strong>
+                <p>Enhanced digital presence by designing creative layouts and engaging interfaces for their platforms.</p>
+            </li>
+            <li>
+                <strong>Freelance Projects</strong>
+                <p>Created tailored websites for clients, ensuring their visions came to life with visually appealing and functional designs.</p>
+            </li>
+            <li>
+                <strong>Portfolio Website</strong>
+                <p>Currently crafting a personal website to showcase skills, projects, and creativity.</p>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <p> <a href="./pagee.html">Visit my Portfolio</a></p>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
